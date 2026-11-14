@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Перевод температуры между градусами Цельсия, Фаренгейта и кельвинами с поддержкой офлайн-режима.">
+    <meta name="theme-color" content="#f28c28">
+    <title>Конвертер температур</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/app.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+        <div class="container">
+            <p class="eyebrow">Цельсий · Фаренгейт · Кельвин</p>
+            <h1>Конвертер температур</h1>
+            <nav aria-label="Основная навигация">
+                <a href="/" aria-current="page">Главная</a>
+                <a href="/about">О себе</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+        <section class="panel" aria-labelledby="converter-title">
+            <div class="panel-heading">
+                <h2 id="converter-title">Перевод температуры</h2>
+                <p id="connection-status" role="status">Проверка подключения…</p>
+            </div>
+            <form id="converter-form">
+                <div class="fields">
+                    <div class="field">
+                        <label for="temperature-value">Температура</label>
+                        <input id="temperature-value" name="value" type="number" value="25" step="any" required>
+                    </div>
+                    <div class="field">
+                        <label for="temperature-from">Из шкалы</label>
+                        <select id="temperature-from" name="from">
+                            <option value="C">Цельсий (°C)</option>
+                            <option value="F">Фаренгейт (°F)</option>
+                            <option value="K">Кельвин (K)</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="temperature-to">В шкалу</label>
+                        <select id="temperature-to" name="to">
+                            <option value="C">Цельсий (°C)</option>
+                            <option value="F" selected>Фаренгейт (°F)</option>
+                            <option value="K">Кельвин (K)</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="convert-button" type="submit">Перевести</button>
+            </form>
+            <div class="result">
+                <p class="result-label">Результат</p>
+                <output id="conversion-result" for="temperature-value temperature-from temperature-to" aria-live="polite">—</output>
+                <p id="conversion-note" class="muted"></p>
+                <p id="conversion-error" class="error" role="alert" hidden></p>
+            </div>
+            <noscript><p>Для расчётов включите JavaScript.</p></noscript>
+        </section>
+
+        <section class="offline-section" aria-labelledby="offline-title">
+            <h2 id="offline-title">Работа без подключения</h2>
+            <p>После первого открытия страницы конвертер сохраняется на устройстве и выполняет расчёты без интернета.</p>
+            <p id="offline-status" class="muted" role="status">Подготовка офлайн-режима…</p>
+            <button id="install-app" type="button" hidden>Установить приложение</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>Камиль Галимзянов · 932404</p>
+            <div class="footer-links">
+                <a href="/api/status">Статус сервера</a>
+                <a href="https://github.com/DeboshCode/932404.galimzyanov.kamil.lab6">Репозиторий</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

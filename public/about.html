@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Камиль Галимзянов, группа 932404. Лабораторная работа №6, вариант 16.">
+    <meta name="theme-color" content="#f28c28">
+    <title>О себе — Конвертер температур</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/app.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+        <div class="container">
+            <p class="eyebrow">Конвертер температур</p>
+            <h1>О себе</h1>
+            <nav aria-label="Основная навигация">
+                <a href="/">Главная</a>
+                <a href="/about" aria-current="page">О себе</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+        <section class="panel about" aria-labelledby="author-title">
+            <h2 id="author-title">Камиль Галимзянов</h2>
+            <p>Группа 932404.</p>
+            <p>Лабораторная работа №6 по веб-технологиям. Вариант 16 — конвертер температур.</p>
+            <p>Приложение переводит температуру между шкалами Цельсия, Фаренгейта и Кельвина. После первого открытия расчёты и обе страницы доступны без подключения.</p>
+            <a class="back-link" href="/">Перейти к конвертеру</a>
+        </section>
+        <div class="offline-section">
+            <p id="connection-status" role="status">Проверка подключения…</p>
+            <p id="offline-status" class="muted" role="status">Подготовка офлайн-режима…</p>
+            <button id="install-app" type="button" hidden>Установить приложение</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>Камиль Галимзянов · 932404</p>
+            <div class="footer-links">
+                <a href="/api/status">Статус сервера</a>
+                <a href="https://github.com/DeboshCode/932404.galimzyanov.kamil.lab6">Репозиторий</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
